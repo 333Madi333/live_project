@@ -9,8 +9,8 @@ Feature: Access Management scenarios
 
   Scenario: Create a new user
 
-    When I input "Test" to the "First Name" field
-    And I input "TestUser" to the "Last Name" field
-    And I input "testuser@gmail" to the "E-mail" field
+    When I input to "First Name" as "Test"
+    And I input to "Last Name" as "TestUser"
+    And I input to "E-mail" as "testuser@gmail"
 
 
