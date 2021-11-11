@@ -36,6 +36,9 @@ public class AccesMngPage {
     @FindBy (xpath = "//tr/td[4]")
     public List<WebElement> passwordsList;
 
+    @FindBy (xpath = "//button[text()='Manage Access']")
+    public WebElement mngAcsBtn;
+
 
 
 }
