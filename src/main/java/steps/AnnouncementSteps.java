@@ -3,6 +3,8 @@ package steps;
 import impl.AnnouncementImpl;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+import utils.WebDriverUtils;
 
 public class AnnouncementSteps {
     AnnouncementImpl impl = new AnnouncementImpl();
@@ -28,14 +30,15 @@ public class AnnouncementSteps {
     }
 
     @Then("I should see Update announcement")
-    public void ishouldseeUpdate() {
+    public void ishouldseeUpdate() throws InterruptedException {
         System.out.println(impl.getPage().announcementList.getText());
-//        Assert.assertEquals("Update test", impl.getPage().announcementList.getText());
+           Assert.assertEquals("Update test", impl.getPage().announcementList.getText());
     }
 
     @Then("I click delete button")
     public void i_click_delete_button() {
         impl.getPage().deleteBtn.click();
+
     }
 
 
