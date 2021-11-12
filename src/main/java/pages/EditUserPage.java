@@ -37,4 +37,41 @@ public class EditUserPage {
 
     @FindBy(id = "submit-btn")
     public WebElement addUserBtn;
+
+    @FindBy(xpath = "//*[@id='list-table']/tbody/tr[1]/td[1]")
+    public WebElement uFName;
+
+    @FindBy(xpath = "//*[@id='list-table']/tbody/tr[1]/td[2]")
+    public WebElement uLName;
+
+    @FindBy(xpath = "//*[@id='list-table']/tbody/tr[1]/td[3]")
+    public WebElement uEmail;
+
+    @FindBy(xpath = "//*[@id='list-table']/tbody/tr[1]/td[4]")
+    public WebElement uPWord;
+
+    @FindBy(xpath = "//*[@id='list-table']/tbody/tr[1]/td[5]")
+    public WebElement uRole;
+
+    @FindBy(xpath = "//*[@id='list-table']/tbody/tr[1]/td[6]")
+    public WebElement uBatch;
+
+    @FindBy(xpath = "//div[@id='myModal']//input[@id='Firstname']")
+    public WebElement upFNameFillBox;
+
+    @FindBy(xpath = "//div[@id='myModal']//input[@id='Lastname']")
+    public WebElement upLNameFillBox;
+
+    @FindBy(xpath = "//div[@id='myModal']//input[@id='Email']")
+    public WebElement upEmailFillBox;
+
+    @FindBy(xpath = "//div[@id='myModal']//select[@id='Role']")
+    public WebElement upRoleSelectOpt;
+
+    @FindBy(xpath = "//div[@id='myModal']//select[@id='Batch']")
+    public WebElement upBatchSelectOpt;
+
+    @FindBy(xpath = "//*[@id='myModal']//*[@id='submit-btn']")
+    public WebElement upUserBtn;
+
 }
