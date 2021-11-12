@@ -24,4 +24,25 @@ public class AccesMngSteps {
     }
 
 
+    @And("I select {string} as a Role")
+    public void iSelectAsARole(String selRole) {
+        impl.selectRole(selRole);
+    }
+
+    @And("I select {string} as a Batch")
+    public void iSelectAsABatch(String selBatch) {
+        impl.selectBatch(selBatch);
+    }
+
+    @Then("I click Add user button")
+    public void iClickAddUserButton() {
+        impl.getPage().addUserBtn.click();
+    }
+
+
+    @Then("I delete {string} user")
+    public void iDeleteUser(String UserName) throws InterruptedException {
+        impl.deleteUser(UserName);
+    }
+
 }
