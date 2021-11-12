@@ -1,6 +1,6 @@
 Feature: Access Management scenarios
   Background:
-
+git
     Given  I navigate to LoginPage
     When  I input "Username" as "Instructor@gmail.com"
     And  I input "Password" as "123456"
