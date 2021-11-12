@@ -14,6 +14,7 @@ public class LoginSteps {
     public void i_navigate_to_login_page() {
       impl.navigateToLoginPage();
     }
+
     @When("I input {string} as {string}")
     public void i_input_as(String inputFieldName, String value) {
        impl.fillInputField(inputFieldName, value);

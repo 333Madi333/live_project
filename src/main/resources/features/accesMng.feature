@@ -13,4 +13,3 @@ Feature: Access Management scenarios
     And I input to "Last Name" as "TestUser"
     And I input to "E-mail" as "testuser@gmail"
 
-
