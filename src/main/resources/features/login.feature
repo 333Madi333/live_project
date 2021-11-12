@@ -7,6 +7,13 @@ Feature: Login page scenarios
     And I click Login button
     Then Title of the page should be Home Page
 
+  Scenario: Verify login options with valid credentials as Student
+    Given I navigate to LoginPage
+    When I input "username" as "user@test.com"
+    And I input "password" as "123456"
+    And I click Login button
+    Then Title of the page should be Home Page
+
   Scenario: Verify login options with Invalid credentials
     Given  I navigate to LoginPage
     When  I input "Username" as "test@gmail.com"
