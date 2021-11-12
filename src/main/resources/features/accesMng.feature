@@ -8,9 +8,21 @@ Feature: Access Management scenarios
 
 
   Scenario: Create a new user
-
     When I input to "First Name" as "Test"
     And I input to "Last Name" as "TestUser"
-    And I input to "E-mail" as "testuser@gmail"
+    And I input to "E-mail" as "testuser@gmail.com"
+    And I select "Instructor" as a Role
+    And I select "N/A" as a Batch
+    Then I click Add user button
+
+  Scenario: Delete user
+    Then  I delete "testuser@gmail.com" user
+
+
+
+
+
+
+
 
 
