@@ -20,27 +20,45 @@ public class AnnouncementSteps {
     }
 
     @Then("I input announcement")
-    public void iInputAnnouncement(){
+    public void iInputAnnouncement() {
         impl.getPage().announcementInput.sendKeys("Put on GitLab");
     }
 
     @Then("I click Post button")
-    public void i_click_post_button() {
+    public void i_click_post_button() throws InterruptedException {
         impl.getPage().postBtn.click();
+        Thread.sleep(3000);
     }
 
-    @Then("I should see Update announcement")
+    @Then("I should see Update announcement title")
     public void ishouldseeUpdate() throws InterruptedException {
         System.out.println(impl.getPage().announcementList.getText());
            Assert.assertEquals("Update test", impl.getPage().announcementList.getText());
     }
 
+    @Then("I should see Update announcement description")
+    public void iShouldSeeUpdateAnnouncementDescription() {
+        System.out.println(impl.getPage().descriptionList.getText());
+        Assert.assertEquals("Put on GitLab Delete", impl.getPage().descriptionList.getText());
+    }
+
     @Then("I click delete button")
-    public void i_click_delete_button() {
+    public void i_click_delete_button() throws InterruptedException {
         impl.getPage().deleteBtn.click();
+        Thread.sleep(3000);
+        WebDriverUtils.quitDriver();
 
     }
 
 
+    @When("I should see announcement list")
+    public void iShouldSeeAnnouncementList() {
+        impl.getPage().announcementList.getText();
+    }
 
+    @Then("I should not see Update announcement title")
+    public void iShouldNotSeeUpdateAnnouncementTitle() {
+        Assert.assertNotEquals("Update test", impl.getPage().announcementList.getText());
+        WebDriverUtils.quitDriver();
+    }
 }
