@@ -11,8 +11,4 @@ public class HomeImpl {
             page = new HomePage();
         return page;
     }
-
-
-
-
 }
