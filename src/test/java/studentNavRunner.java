@@ -4,12 +4,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {"pretty", "html:target/studentNav.html",
-                "rerun:target/failed-scenarios/studentNav.txt"},
-        features = "src/main/resources/features/studentNav.feature",
-        glue = {"steps"},
-        stepNotifications = true,
-        dryRun = false
+        plugin = {"pretty", "html:target/studenNav.html",
+                "rerun:target/failed-scenarios/studenNav.txt"},
+        features = "src/main/resources/features/studenNav.feature"
 )
 
 
