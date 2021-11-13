@@ -5,8 +5,6 @@ Feature: Announcement Scenarios
     And  I input "Password" as "123456"
     And I click Login button
 
-
-
   Scenario: Adding Announcement
     When I click Add announcement
     Then I input title
