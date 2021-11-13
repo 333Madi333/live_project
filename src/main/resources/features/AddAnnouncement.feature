@@ -14,11 +14,6 @@ Feature: Announcement Scenarios
     Then I should see Update announcement title
     Then I click delete button
 
-
-  Scenario: Delete Announcement
-    When I should see announcement list
-    Then I click delete button
-
   Scenario: Add Announcement without title
     When I click Add announcement
     Then I input announcement
@@ -31,4 +26,11 @@ Feature: Announcement Scenarios
     Then I input title
     And I click Post button
     Then I should not see Update announcement title
+
+  Scenario: Delete Announcement
+    When I should see announcement list
+    Then I click delete button
+
+
+
 
