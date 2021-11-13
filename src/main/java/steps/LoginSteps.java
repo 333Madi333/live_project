@@ -26,7 +26,7 @@ public class LoginSteps {
 
     @Then("Title of the page should be Home Page")
     public void titleOfThePageShouldBeHomePage() {
-        Assert.assertEquals("Home Page" , WebDriverUtils.getDriver().getTitle());
+        Assert.assertEquals("Student Portal" , WebDriverUtils.getDriver().getTitle());
         WebDriverUtils.quitDriver();
     }
 
