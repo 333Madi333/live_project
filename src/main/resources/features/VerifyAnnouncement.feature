@@ -6,17 +6,6 @@ Feature: Announcement Scenarios
     And I click Login button
 
 
-
-  Scenario: Adding & Delete Announcement
-    When I click Add announcement
-    Then I input title
-    Then I input announcement
-    And I click Post button
-    Then I should see Update announcement
-    Then I should be able to delete announcement
-
-
-
 # Jack Testing
   Scenario: Verify Announcement Title is Display in HomePage
     Then Verify Announcement title should be Display
