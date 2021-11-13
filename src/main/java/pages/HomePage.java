@@ -12,8 +12,9 @@ public class HomePage {
         PageFactory.initElements(WebDriverUtils.getDriver(), this);
     }
 
-
     @FindBy(id = "welcome_msg")
     public WebElement welcomeMSG;
+
+
 
 }
