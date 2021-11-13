@@ -49,12 +49,14 @@ public class AccesMngSteps {
     }
 
     @Then("default password should be {string}")
-    public void defaultPasswordShouldBe() {
-        List<WebElement> str = impl.getPage().passwordsList;
-        for (int i = 0; i < str.size(); i++) {
-            System.out.println(str);
-            Assert.assertEquals(str, impl.getPage().passwordsList.get(i).getText());
+    public void defaultPasswordShouldBe(String arg0) {
+        List<WebElement> defaultPassword = impl.getPage().passwordsList;
+            for (int i = 0; i < defaultPassword.size(); i++) {
+                Assert.assertTrue(defaultPassword.get(i).isDisplayed());
 
+            }
         }
     }
-}
+
+
+

@@ -11,7 +11,7 @@ import utils.WebDriverUtils;
 import java.util.List;
 
 
-public class HomeSteps {
+public class AnonounmentSteps {
     HomeImpl impl = new HomeImpl();
 
 
