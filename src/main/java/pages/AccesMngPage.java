@@ -1,5 +1,7 @@
 package pages;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -22,23 +24,32 @@ public class AccesMngPage {
     public WebElement emailInput;
 
     @FindBy (id = "Role")
-    public WebElement roleInput;
+    public WebElement roleSel;
 
     @FindBy (id = "Batch")
-    public WebElement batchInput;
+    public WebElement batchSel;
 
     @FindBy (xpath = "//button[text()='Add User']")
     public WebElement addUserBtn;
 
+    @FindBy (xpath = "//button[text()='Manage Access']")
+    public WebElement mngAcsBtn;
+
+    @FindBy (xpath = "//button[text()='Delete']")
+    public List<WebElement> deleteBtnList;
+
+    @FindBy (xpath = "//button[@class='btn btn-danger mt-3']")
+    public WebElement del;
+
+
     @FindBy (xpath = "//tr/td[3]")
-    public List<WebElement> userNameList;
+    public List<WebElement> usersList;
 
     @FindBy (xpath = "//tr/td[4]")
     public List<WebElement> passwordsList;
 
-    @FindBy (xpath = "//button[text()='Manage Access']")
-    public WebElement mngAcsBtn;
-
+    @FindBy (xpath = "//tr/td[7]")
+    public List<WebElement> dropDownList;
 
 
 }

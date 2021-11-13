@@ -41,9 +41,6 @@ public class SeleniumUtils {
 
     }
 
-
-
-
     public static void selectByVisibleText(WebElement element, String textValue){
         Select select = new Select(element);
         select.selectByVisibleText(textValue);
