@@ -6,10 +6,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {"pretty", "html:target/MainNavRunner.html",
                 "rerun:target/failed-scenarios/MainNav.txt"},
-        features = "src/main/resources/features/MainNav.feature",
-        glue = {"steps"},
-        stepNotifications = true,
-        dryRun = false
+        features = "src/main/resources/features/MainNav.feature"
 )
 
 public class MainNavRunner {

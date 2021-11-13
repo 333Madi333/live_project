@@ -1,23 +1,47 @@
 package impl;
 
-import pages.HomePage;
-import pages.InitialUserLoginpage;
+import org.openqa.selenium.WebElement;
+import pages.AccesMngPage;
+import pages.InitialUserLoginPage;
+
+import java.util.List;
+
 
 public class InitialUserLoginImpl {
+    InitialUserLoginPage page;
+    AccesMngPage accesMngPage;
 
-    InitialUserLoginpage page;
+    public InitialUserLoginPage getPage(){
+        if(page==null)
+            page = new InitialUserLoginPage();
+        return page;
+    }
 
-        public InitialUserLoginpage getPage(){
-            if(page==null)
-                page = new InitialUserLoginpage();
-            return page;
+    public AccesMngPage getAccesMngPage(){
+        if(accesMngPage==null)
+            accesMngPage = new AccesMngPage();
+        return accesMngPage;
+    }
+
+
+    public String  CheckPassword(String userName, String password){
+
+        String passValue = "";
+        List <WebElement> users = getAccesMngPage().usersList;
+        List <WebElement> pass = getAccesMngPage().passwordsList;
+
+        for (int i=0; i<users.size(); i++) {
+            if (users.get(i).getText().equals(userName)) {
+                passValue = pass.get(i).getText();
+            }
+
         }
-
-
-    public static String switchWindoeGetText(){
-            String text="";
-            return text;
-    }
+        return passValue;
 
 
     }
+
+
+
+
+}
