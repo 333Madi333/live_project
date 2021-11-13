@@ -14,17 +14,18 @@ Feature: Access Management scenarios
     And I click Login button
     Then I click Manage Access button
     Given I create new user
-      | first name | Kuba              |
-      | last name  | TheGreat          |
-      | e-mail     | kuba@thegreat.com |
-      | role       | Instructor        |
-      | batch      | 4                 |
+      | first name | Dada          |
+      | last name  | Mama          |
+      | e-mail     | Dada@mama.com |
+      | role       | Instructor    |
+      | batch      | 4             |
     And I click Add User button
 
   Scenario: Verify user update popup window
     When I click on Action dropdown menu
     And I click on Edit option
     Then I should see a popup window with Update User displayed
+
 
   Scenario: I Input new information for the newly added user
     When I input new firstname as "Kai"
@@ -35,7 +36,17 @@ Feature: Access Management scenarios
     Then I click on Update ser button
     Then I should see the new update information
 
+  Scenario: Verify Reset Password button
+    When I click on Action dropdown menu
+    When I click on Reset Password button
+    Then Password should be "kai.iem$"
 
+  Scenario: I delete newly updated user information
+    When I click on Action dropdown menu
+    And I click on Delete option
+    Then I should see Delete popup window
+    When I click on Delete button
+    Then I should not see the newest user information I just added
 
 
 

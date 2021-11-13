@@ -17,8 +17,20 @@ public class EditUserPage {
     @FindBy(xpath = "//tr[1]//button[text()='Edit']")
     public WebElement editBtn;
 
+    @FindBy(xpath = "//tr[1]//button[text()='Delete']")
+    public WebElement deleteBtn;
+
+    @FindBy(xpath = "//tr[1]//button[text()='Reset Password']")
+    public WebElement resetPassBtn;
+
+    @FindBy(xpath = "//*[@id='myModal']//button[text()='Delete']")
+    public WebElement confirmDeleteBtn;
+
     @FindBy(xpath = "//*[@id='myModal']//h5")
     public WebElement updateUserPopUpHeader;
+
+    @FindBy(xpath = "//*[@id='myModal']//h4")
+    public WebElement deleteUserPopUpHeader;
 
     @FindBy(id = "Firstname")
     public WebElement firstNameInput;
@@ -37,6 +49,9 @@ public class EditUserPage {
 
     @FindBy(id = "submit-btn")
     public WebElement addUserBtn;
+
+    @FindBy(xpath = "//*[@id='list-table']/tbody/tr")
+    public WebElement uAccountInfo;
 
     @FindBy(xpath = "//*[@id='list-table']/tbody/tr[1]/td[1]")
     public WebElement uFName;
