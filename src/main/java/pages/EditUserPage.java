@@ -14,6 +14,12 @@ public class EditUserPage {
     @FindBy(xpath = "//tr[1]//button[@id='dropdownMenu2']")
     public WebElement actionBtn;
 
+    @FindBy(name = "search")
+    public WebElement searchFillBox;
+
+    @FindBy(xpath = "//div[@class='row ml-1 mb-2']//button[@type='submit']")
+    public WebElement searchSubmitBtn;
+
     @FindBy(xpath = "//tr[1]//button[text()='Edit']")
     public WebElement editBtn;
 

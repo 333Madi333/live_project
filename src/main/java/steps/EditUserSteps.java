@@ -15,7 +15,7 @@ import java.util.Map;
 
 public class EditUserSteps {
     EditUserImpl impl = new EditUserImpl();
-    WebDriverWait wait = new WebDriverWait(WebDriverUtils.getDriver(), 5);
+    WebDriverWait wait = new WebDriverWait(WebDriverUtils.getDriver(), 10);
 
     @Given("I create new user")
     public void iCreateNewUser(Map<String, String> map) {
@@ -30,6 +30,12 @@ public class EditUserSteps {
     }
 
     //-----------------------------  edit user information  -----------------------------
+    @When("I search for the user email {string} so I can work with his or her info")
+    public void iSearchForTheUserEmailSoICanWorkWithHisOrHerInfo(String value) {
+        impl.getPage().searchFillBox.sendKeys(value);
+        impl.getPage().searchSubmitBtn.click();
+    }
+
     @When("I click on Action dropdown menu")
     public void iClickOnActionDropdownMenu() {
         wait.until(ExpectedConditions.visibilityOf(impl.getPage().actionBtn));
@@ -120,5 +126,6 @@ public class EditUserSteps {
     @Then("I should not see the newest user information I just added")
     public void iShouldNotSeeTheNewestUserInformationIJustAdded() {
         Assert.assertEquals("success", impl.verifyDeleteUserInformation());
+        WebDriverUtils.quitDriver();
     }
 }
