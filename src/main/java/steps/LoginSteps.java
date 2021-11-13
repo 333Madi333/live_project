@@ -25,6 +25,12 @@ public class LoginSteps {
        impl.getPage().loginBtn.click();
     }
 
+    @Then("Title of the page should be Home Page")
+    public void titleOfThePageShouldBeHomePage() {
+        Assert.assertEquals("Student Portal" , WebDriverUtils.getDriver().getTitle());
+        WebDriverUtils.quitDriver();
+    }
+
 
     @Then("I should see error message")
     public void iShouldSeeErrorMessage() {

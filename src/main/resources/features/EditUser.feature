@@ -1,6 +1,6 @@
 Feature: Access Management scenarios
 
-
+#  Need to disable hook file before testing
   Scenario: Add new user so I can test if I can edit user information
     Given  I navigate to LoginPage
     When  I input "Username" as "kuba@gmail.com"
@@ -20,7 +20,6 @@ Feature: Access Management scenarios
     When I click on Action dropdown menu
     And I click on Edit option
     Then I should see a popup window with Update User displayed
-
 
   Scenario: I Input new information for the newly added user
     When I input new firstname as "Kai"
@@ -44,6 +43,3 @@ Feature: Access Management scenarios
     Then I should see Delete popup window
     When I click on Delete button
     Then I should not see the newest user information I just added
-
-
-
