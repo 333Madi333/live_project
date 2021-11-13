@@ -36,4 +36,9 @@ public class studentNavSteps {
     public void i_should_be_able_to_see_meetings_links_button() throws InterruptedException {
        Assert.assertTrue(impl.getPage().MeetingsLink.isDisplayed());
     }
+
+    @Then("i click homework")
+    public void iClickHomework() {
+        impl.getPage().HomeworkLink.click();
+    }
 }
