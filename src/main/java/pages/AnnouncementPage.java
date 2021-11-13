@@ -27,6 +27,9 @@ public class AnnouncementPage {
     @FindBy (xpath = "//tbody/tr/td/b[1]")
     public WebElement announcementList;
 
+    @FindBy(xpath = "(//div[@class='each_announcement mt-2'])[1]")
+    public WebElement descriptionList;
+
     @FindBy (xpath = "(//u[@id='delete_post'])[1]")
     public WebElement deleteBtn;
 

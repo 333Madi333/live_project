@@ -9,9 +9,14 @@ import utils.WebDriverUtils;
 import java.util.List;
 
 
-public class HomePage {
+public class    HomePage {
     public HomePage() {
         PageFactory.initElements(WebDriverUtils.getDriver(), this);
     }
+
+    @FindBy(id = "welcome_msg")
+    public WebElement welcomeMSG;
+
+
 
 }
