@@ -36,6 +36,7 @@ public class AccesMngImpl {
 
     }
 
+
     public void selectRole(String selRole){
         Select select = new Select(getPage().roleSel);
         List<WebElement> list = select.getOptions();
@@ -122,4 +123,5 @@ public class AccesMngImpl {
 
 
     }
+
 }
