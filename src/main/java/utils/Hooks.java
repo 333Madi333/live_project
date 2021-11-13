@@ -12,7 +12,11 @@ public class Hooks {
 
     @After
     public void tearDown(){
-       WebDriverUtils.closeDriver();
+
+
+
+        WebDriverUtils.quitDriver();
+
     }
 
 
