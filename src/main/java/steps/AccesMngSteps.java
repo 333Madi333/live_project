@@ -5,8 +5,10 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import utils.WebDriverUtils;
+import org.openqa.selenium.WebElement;
+
+
+import java.util.List;
 
 public class AccesMngSteps {
     AccesMngImpl impl = new AccesMngImpl();
@@ -45,4 +47,20 @@ public class AccesMngSteps {
         impl.deleteUser(UserName);
     }
 
+    @Then("default password should be {string}")
+    public void defaultPasswordShouldBe(String defaultPass) {
+        List<WebElement> defaultPassword = impl.getPage().passwordsList;
+        for (int i = 0; i < defaultPassword.size(); i++) {
+            //Assert.assertTrue(defaultPass, defaultPassword.get(i).isDisplayed());
+            if (defaultPass.contains(defaultPassword.get(i).getText())) {
+                Assert.assertEquals(defaultPass, defaultPassword.get(i).getText());
+
+            }
+        }
+    }
 }
+
+
+
+
+

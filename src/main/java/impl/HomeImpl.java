@@ -6,6 +6,7 @@ import utils.SeleniumUtils;
 import utils.WebDriverUtils;
 
 public class HomeImpl {
+
     HomePage page;
 
     public HomePage getPage() {
@@ -13,4 +14,13 @@ public class HomeImpl {
             page = new HomePage();
         return page;
     }
-}
+
+    public void navigateToHomePage() {
+
+        WebDriverUtils.getDriver().get(ConfigReader.readProperty("url"));
+    }
+
+   }
+
+
+

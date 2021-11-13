@@ -30,7 +30,3 @@ Feature: Announcement Scenarios
   Scenario: Delete Announcement
     When I should see announcement list
     Then I click delete button
-
-
-
-

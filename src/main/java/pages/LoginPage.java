@@ -10,13 +10,13 @@ public class LoginPage {
         PageFactory.initElements(WebDriverUtils.getDriver(), this);
     }
 
-    @FindBy(name = "email")
+    @FindBy(xpath = "//input[@name='email']")
     public WebElement userNameInput;
 
-    @FindBy(name = "password")
+    @FindBy(xpath = "//input[@name='password']")
     public WebElement passwordInput;
 
-    @FindBy(xpath = "//button[text()='Login']")
+    @FindBy(xpath = "//button[@type='submit']")
     public WebElement loginBtn;
 
     @FindBy(xpath = "//div[text()='Incorrect username/password']")

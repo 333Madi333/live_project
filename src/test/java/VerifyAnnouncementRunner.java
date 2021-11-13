@@ -5,11 +5,11 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {"pretty", "html:target/Runner.html", "rerun:target/failed-scenarios/AnnouncementRunner.txt"},
-        features = "src/main/resources/features/AddAnnouncement.feature",
+        features = "src/main/resources/features/VerifyAnnouncement.feature",
         glue = {"steps"},
         stepNotifications = true
 )
 
-public class AnnouncementRunner {
+public class VerifyAnnouncementRunner {
 
 }
