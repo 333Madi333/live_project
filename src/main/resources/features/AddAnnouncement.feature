@@ -15,7 +15,7 @@ Feature: Announcement Scenarios
     And I click Post button
     Then I should see Update announcement
 
-  @end
+@end
   Scenario: Delete Announcement
     When I should see Update announcement
     Then I click delete button

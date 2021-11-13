@@ -31,6 +31,7 @@ public class AnnouncementSteps {
 
     @Then("I should see Update announcement")
     public void ishouldseeUpdate() throws InterruptedException {
+        Thread.sleep(500);
         System.out.println(impl.getPage().announcementList.getText());
            Assert.assertEquals("Update test", impl.getPage().announcementList.getText());
     }
