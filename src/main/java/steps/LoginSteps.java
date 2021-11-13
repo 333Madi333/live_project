@@ -25,11 +25,6 @@ public class LoginSteps {
        impl.getPage().loginBtn.click();
     }
 
-    @Then("Title of the page should be Home Page")
-    public void titleOfThePageShouldBeHomePage() {
-        Assert.assertEquals("Home Page" , WebDriverUtils.getDriver().getTitle());
-        WebDriverUtils.quitDriver();
-    }
 
     @Then("I should see error message")
     public void iShouldSeeErrorMessage() {
@@ -37,5 +32,12 @@ public class LoginSteps {
         WebDriverUtils.quitDriver();
     }
 
+
+    @Then("Title of the page should be Student Portal")
+    public void titleOfThePageShouldBeStudentPortal() {
+        Assert.assertEquals("Student Portal" , WebDriverUtils.getDriver().getTitle());
+        System.out.println(WebDriverUtils.getDriver().getTitle());
+        WebDriverUtils.quitDriver();
+    }
 
 }

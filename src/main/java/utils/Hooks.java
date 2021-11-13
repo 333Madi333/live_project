@@ -10,7 +10,7 @@ public class Hooks {
 
     }
 
-    @After
+    @After ("@end")
     public void tearDown(){
         WebDriverUtils.quitDriver();
     }
