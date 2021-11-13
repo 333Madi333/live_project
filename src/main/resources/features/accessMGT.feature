@@ -7,7 +7,7 @@ Feature: Access Management scenarios
     And I click Login button
     Then I click Manage Access button
 
-
+@end
   Scenario: Create a new user
     When I input to "First Name" as "Jack"
     And I input to "Last Name" as "GaRm"

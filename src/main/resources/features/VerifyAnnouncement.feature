@@ -7,12 +7,13 @@ Feature: Announcement Scenarios
 
 
 # Jack Testing
+  @end
   Scenario: Verify Announcement Title is Display in HomePage
     Then Verify Announcement title should be Display
-
+  @end
   Scenario: Verify Announcement Message is Display in HomePage
     Then Verify Announcement message should be Display
-
+  @end
   Scenario: Verify Announcement TimeStamp is Display in HomePage
     Then Verify Announcement timestamp should be Display
 

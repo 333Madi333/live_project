@@ -12,14 +12,12 @@ public class HomePageSteps {
     public void theDisplayShouldSayWelcome(String userFName) {
         Assert.assertEquals("Welcome " + userFName + "!", impl.getPage().welcomeMSG.getText());
 
-        WebDriverUtils.quitDriver();
     }
 
 
-    // expect Failed..!!!
     @Then("The the title should be {string}")
     public void theTheTitleShouldBe(String titleName) {
         Assert.assertEquals(titleName, WebDriverUtils.getDriver().getTitle());
-        WebDriverUtils.quitDriver();
+
     }
 }
