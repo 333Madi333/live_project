@@ -4,6 +4,9 @@ import impl.AccesMngImpl;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import utils.WebDriverUtils;
 
 public class AccesMngSteps {
     AccesMngImpl impl = new AccesMngImpl();
@@ -19,6 +22,7 @@ public class AccesMngSteps {
     public void iInputToAs(String inputField, String value) {
         impl.InputField(inputField, value);
     }
+
 
     @And("I select {string} as a Role")
     public void iSelectAsARole(String selRole) {
@@ -36,9 +40,9 @@ public class AccesMngSteps {
     }
 
 
-
     @Then("I delete {string} user")
     public void iDeleteUser(String UserName) throws InterruptedException {
         impl.deleteUser(UserName);
     }
+
 }
