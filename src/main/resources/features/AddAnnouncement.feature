@@ -6,9 +6,9 @@ Feature: Announcement Scenarios
     And I click Login button
 
 
-@end
 
-Scenario: Adding Announcement
+@end
+  Scenario: Adding Announcement
     When I click Add announcement
     Then I input title
     Then I input announcement
