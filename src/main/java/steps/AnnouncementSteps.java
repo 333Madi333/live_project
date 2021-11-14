@@ -1,6 +1,7 @@
 package steps;
 
 import impl.AnnouncementImpl;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -50,7 +51,7 @@ public class AnnouncementSteps {
     }
 
 
-    @Then("I should see Update announcement description")
+    @And("I should see Update announcement description")
     public void iShouldSeeUpdateAnnouncementDescription() {
         System.out.println(impl.getPage().descriptionList.getText());
         Assert.assertEquals("Put on GitLab Delete", impl.getPage().descriptionList.getText());
@@ -61,8 +62,14 @@ public class AnnouncementSteps {
         impl.getPage().deleteBtn.click();
         Thread.sleep(3000);
         WebDriverUtils.quitDriver();
-
     }
+
+    @And("I should not be able to click Post button")
+    public void iShouldNotBeAbleToClickPostButton() {
+        impl.getPage().deleteBtn.isEnabled();
+    }
+
+
     // Jack Testing
     @Then("Verify Announcement title should be Display")
     public void verify_announcement_title_should_be_display () throws InterruptedException {
@@ -105,6 +112,8 @@ public class AnnouncementSteps {
         Assert.assertNotEquals("Update test", impl.getPage().announcementList.getText());
         WebDriverUtils.quitDriver();
     }
+
+
 }
 
 
