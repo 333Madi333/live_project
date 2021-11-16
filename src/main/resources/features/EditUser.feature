@@ -27,7 +27,7 @@ Feature: Access Management scenarios
     And I input new e-mail "kaiiem@kubathegreat.com"
     And I change new role to "Student"
     And I change new batch to "3"
-    Then I click on Update ser button
+    Then I click on Update user button
     Then I should see the new update information
 
   Scenario: Verify Reset Password button
