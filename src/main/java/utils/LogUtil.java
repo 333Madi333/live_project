@@ -39,6 +39,7 @@ public class LogUtil {
         }
     }
 
+
     public static String getLogTime() {
         String format = "yyy-MM-dd HH:mm:ss";
         DateFormat dateFormat = new SimpleDateFormat(format);
