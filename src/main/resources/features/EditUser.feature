@@ -1,6 +1,5 @@
 Feature: Access Management scenarios
 
-#  Need to disable hook file before testing
   Scenario: Add new user so I can test if I can edit user information
     Given  I navigate to LoginPage
     When  I input "Username" as "kuba@gmail.com"
