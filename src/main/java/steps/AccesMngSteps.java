@@ -6,7 +6,10 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
+import utils.CucumberLogUtils_ScreenShot;
+
 import java.util.List;
+
 
 
 
@@ -49,12 +52,13 @@ public class AccesMngSteps {
 
     @Then("default password should be {string}")
     public void defaultPasswordShouldBe(String defaultPass) {
+        CucumberLogUtils_ScreenShot.logPass("DefaultPassword Verified", true);
+        CucumberLogUtils_ScreenShot.logInfo("DefaultPassword Verified", true);
         List<WebElement> defaultPassword = impl.getPage().passwordsList;
         for (int i = 0; i < defaultPassword.size(); i++) {
             //Assert.assertTrue(defaultPass, defaultPassword.get(i).isDisplayed());
             if (defaultPass.contains(defaultPassword.get(i).getText())) {
                 Assert.assertEquals(defaultPass, defaultPassword.get(i).getText());
-
             }
         }
     }

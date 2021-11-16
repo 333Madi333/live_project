@@ -5,6 +5,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
+import utils.CucumberLogUtils_ScreenShot;
 import utils.WebDriverUtils;
 
 import java.util.List;
@@ -66,6 +67,8 @@ public class AnnouncementSteps {
     // Jack Testing
     @Then("Verify Announcement title should be Display")
     public void verify_announcement_title_should_be_display () throws InterruptedException {
+        CucumberLogUtils_ScreenShot.logPass("title is display", true);
+        CucumberLogUtils_ScreenShot.logInfo("title is display", true);
         List<WebElement> announcementTitle = impl.getPage().Title;
         for (int i = 0; i < announcementTitle.size(); i++) {
             Assert.assertTrue(announcementTitle.get(i).isDisplayed());
