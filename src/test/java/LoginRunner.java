@@ -6,10 +6,9 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {"pretty", "html:target/LoginRunner.html",
                 "rerun:target/failed-scenarios/LoginRunner.txt"},
-        features = "src/main/resources/features/login.feature",
-        glue = {"steps"},
-        stepNotifications = true,
-        dryRun = false
+        features = "src/main/resources/features/login.feature"
+//        glue = {"steps"},
+//        stepNotifications = true
 
 )
 public class LoginRunner {

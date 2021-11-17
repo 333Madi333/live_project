@@ -6,12 +6,18 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.CucumberLogUtils;
+import utils.SeleniumUtils;
 import utils.WebDriverUtils;
 
 import java.util.List;
 
 public class AnnouncementSteps {
     AnnouncementImpl impl = new AnnouncementImpl();
+    WebDriverWait wait = new WebDriverWait(WebDriverUtils.getDriver(), 10);
+
 
     @When("I click Add announcement")
     public void i_click_add_announcement() {
@@ -38,16 +44,20 @@ public class AnnouncementSteps {
 
     @Then("I should see Update announcement title")
     public void ishouldseeUpdate() throws InterruptedException {
-        Thread.sleep(500);
+        wait.until(ExpectedConditions.visibilityOf(impl.getPage().announcementList));
         System.out.println(impl.getPage().announcementList.getText());
         Assert.assertEquals("Update test", impl.getPage().announcementList.getText());
-        Thread.sleep(2000);
+        SeleniumUtils.highlightElement(impl.getPage().announcementList);
+        CucumberLogUtils.logPass("title is display", true);
+        CucumberLogUtils.logInfo("title is display", true);
+
     }
 
     @Then("I should be able to delete announcement")
     public void iShouldBeAbleToDeleteAnnouncement() throws InterruptedException {
+        wait.until(ExpectedConditions.elementToBeClickable(impl.getPage().deleteBtn));
         impl.getPage().deleteBtn.click();
-        Thread.sleep(2000);
+
     }
 
 

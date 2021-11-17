@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {"pretty", "html:target/AddAnnouncement.feature.html",
                 "rerun:target/failed-scenarios/AddAnnouncement.txt"},
-        features = "src/main/resources/features/AddAnnouncement.feature"//,
+        features = "src/main/resources/features/AddAnnouncement.feature"
 //        glue = {"steps"},
 //        stepNotifications = true,
 //        dryRun = false

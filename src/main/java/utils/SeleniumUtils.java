@@ -1,5 +1,6 @@
 package utils;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -44,6 +45,22 @@ public class SeleniumUtils {
     public static void selectByVisibleText(WebElement element, String textValue){
         Select select = new Select(element);
         select.selectByVisibleText(textValue);
+
+    }
+
+    public static void sleep(int milliSeconds) {
+        try {
+            Thread.sleep(milliSeconds);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+    public static void highlightElement(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor) WebDriverUtils.getDriver();
+
+
+        js.executeScript("arguments[0].setAttribute('style', arguments[1]);", element, "color: black;" +
+                "border: 3px solid red; background: yellow");
 
     }
 
