@@ -37,10 +37,19 @@ public class AnnouncementPage {
     @FindBy(xpath = "//td/b")
     public List<WebElement> Title;
 
+    @FindBy(xpath = "//td/b")
+    public WebElement Title2;
+
     @FindBy(xpath = "//div[@class='each_announcement mt-2']")
     public List<WebElement> Message;
 
+    @FindBy(xpath = "//div[@class='each_announcement mt-2']")
+    public WebElement Message2;
+
     @FindBy(xpath = "//td[@class='each_announcement mt-2']")
     public List<WebElement> TimeStamp;
+
+    @FindBy(xpath = "//td[@class='each_announcement mt-2']")
+    public WebElement TimeStamp2;
 
 }

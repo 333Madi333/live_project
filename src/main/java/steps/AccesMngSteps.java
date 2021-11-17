@@ -82,6 +82,7 @@ public class AccesMngSteps {
 
     @Then("default password should be {string}")
     public void defaultPasswordShouldBe(String defaultPass) {
+        //CucumberLogUtils_ScreenShot.logPass("title is display", true);
         List<WebElement> defaultPassword = impl.getPage().passwordsList;
         for (int i = 0; i < defaultPassword.size(); i++) {
             if (defaultPass.contains(defaultPassword.get(i).getText())) {

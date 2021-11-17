@@ -6,13 +6,18 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.CucumberLogUtils_ScreenShot;
+import utils.SeleniumUtils;
 import utils.WebDriverUtils;
 
 import java.util.List;
 
 public class AnnouncementSteps {
     AnnouncementImpl impl = new AnnouncementImpl();
+    WebDriverWait wait = new WebDriverWait(WebDriverUtils.getDriver(), 10);
+
 
     @When("I click Add announcement")
     public void i_click_add_announcement() {
@@ -74,8 +79,11 @@ public class AnnouncementSteps {
     // Jack Testing
     @Then("Verify Announcement title should be Display")
     public void verify_announcement_title_should_be_display () throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOf(impl.getPage().Title2));
+        SeleniumUtils.moveElement(impl.getPage().Title2);
+        SeleniumUtils.highlightElement(impl.getPage().Title2);
         CucumberLogUtils_ScreenShot.logPass("title is display", true);
-        CucumberLogUtils_ScreenShot.logInfo("title is display", true);
+        //CucumberLogUtils_ScreenShot.logInfo("title is display", true);
         List<WebElement> announcementTitle = impl.getPage().Title;
         for (int i = 0; i < announcementTitle.size(); i++) {
             Assert.assertTrue(announcementTitle.get(i).isDisplayed());
@@ -87,6 +95,10 @@ public class AnnouncementSteps {
 
     @Then("Verify Announcement message should be Display")
     public void verify_announcement_message_should_be_display () throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOf(impl.getPage().Message2));
+        SeleniumUtils.moveElement(impl.getPage().Message2);
+        SeleniumUtils.highlightElement(impl.getPage().Message2);
+        CucumberLogUtils_ScreenShot.logPass("message is display", true);
         List<WebElement> announcementMessage = impl.getPage().Message;
         for (int i = 0; i < announcementMessage.size(); i++) {
             Assert.assertTrue(announcementMessage.get(i).isDisplayed());
@@ -97,6 +109,10 @@ public class AnnouncementSteps {
 
     @Then("Verify Announcement timestamp should be Display")
     public void verify_announcement_timestamp_should_be_display () throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOf(impl.getPage().TimeStamp2));
+        SeleniumUtils.moveElement(impl.getPage().TimeStamp2);
+        SeleniumUtils.highlightElement(impl.getPage().TimeStamp2);
+        CucumberLogUtils_ScreenShot.logPass("timestamp is display", true);
         List<WebElement> announcementTimeStamp = impl.getPage().TimeStamp;
         for (int i = 0; i < announcementTimeStamp.size(); i++) {
             Assert.assertTrue(announcementTimeStamp.get(i).isDisplayed());
