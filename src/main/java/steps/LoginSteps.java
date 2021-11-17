@@ -5,9 +5,11 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.CucumberLogUtils;
+import utils.SeleniumUtils;
 import utils.WebDriverUtils;
 
 public class LoginSteps {
@@ -34,18 +36,13 @@ public class LoginSteps {
     public void iShouldSeeErrorMessage() {
         wait.until(ExpectedConditions.visibilityOf(impl.getPage().errorMsg));
         Assert.assertEquals("Incorrect username/password" , impl.getPage().errorMsg.getText());
+        SeleniumUtils.moveElement(impl.getPage().errorMsg);
+        SeleniumUtils.highlightElement(impl.getPage().errorMsg);
         CucumberLogUtils.logInfo("error msg", true);
         WebDriverUtils.quitDriver();
     }
 
 
-//    @Then("Title of the page should be Student Portal")
-//    public void titleOfThePageShouldBeStudentPortal() {
-//        CucumberLogUtils.scenarioID(true);
-//        Assert.assertEquals("Student Portal" , WebDriverUtils.getDriver().getTitle());
-//        System.out.println(WebDriverUtils.getDriver().getTitle());
-//        WebDriverUtils.quitDriver();
-//    }
 
     @Then("I should see the Welcome message")
     public void iShouldSeeTheWelcomeKuba() {
