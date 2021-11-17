@@ -60,6 +60,8 @@ public class EditUserSteps {
     public void iShouldSeeAPopupWindowWithUpdateUserDisplayed() {
         wait.until(ExpectedConditions.visibilityOf(impl.getPage().updateUserPopUpHeader));
         Assert.assertEquals("Update User", impl.getPage().updateUserPopUpHeader.getText());
+        js.executeScript("arguments[0].setAttribute('style', 'background: grey; border: 2px solid red;');", impl.getPage().updateUserPopUpHeader);
+
         LogUtil.logInfo("There is a function to edit user information", true);
     }
 
