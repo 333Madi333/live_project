@@ -3,16 +3,38 @@ package steps;
 import impl.MainNavImpl;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.WebElement;
+import utils.CucumberLogUtils_ScreenShot;
+import utils.SeleniumUtils;
 import utils.WebDriverUtils;
+
+import java.util.List;
 
 public class MainNavSteps {
 
     MainNavImpl impl = new MainNavImpl();
 
     @Then("I click on {string} button")
-    public void iClickOnButton(String button) {
+    public void iClickOnButton(String button) throws InterruptedException {
 
         impl.clickButton(button);
+
+        Thread.sleep(1000);
+        CucumberLogUtils_ScreenShot.scenarioID(true);
+    }
+
+    @Then("I should be able to see navigation buttons")
+    public void iShouldBeAbleToSeeNavigationButtons() throws InterruptedException {
+
+        List<WebElement> nav = impl.getPage().navBtn;
+        for (int i = 0; i < nav.size(); i++){
+            Assert.assertTrue(nav.get(i).isEnabled());
+        }
+
+        SeleniumUtils.highlightElement(impl.getPage().msg);
+
+        Thread.sleep(1000);
+        CucumberLogUtils_ScreenShot.scenarioID(true);
     }
 
     @Then("I should be able to see Homeworks button is displayed")
@@ -38,8 +60,5 @@ public class MainNavSteps {
 
         Assert.assertEquals(expectedTitle, impl.getTitle());
         System.out.println(impl.getTitle());
-
-        WebDriverUtils.closeDriver();
     }
 }
-

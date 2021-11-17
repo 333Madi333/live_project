@@ -8,6 +8,9 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.LogUtil;
+import utils.CucumberLogUtils_ScreenShot;
+
 import utils.SeleniumUtils;
 import utils.WebDriverUtils;
 
@@ -50,6 +53,8 @@ public class EditUserSteps {
 
     @Then("I should see a popup window with Update User displayed")
     public void iShouldSeeAPopupWindowWithUpdateUserDisplayed() {
+//        wait.until(ExpectedConditions.visibilityOf(impl.getPage().updateUserPopUpHeader));
+        LogUtil.logInfo("Edit User Info Window", true);
         Assert.assertEquals("Update User", impl.getPage().updateUserPopUpHeader.getText());
     }
 
@@ -81,14 +86,17 @@ public class EditUserSteps {
         SeleniumUtils.selectByVisibleText(impl.getPage().upBatchSelectOpt, value);
     }
 
-    @Then("I click on Update ser button")
+
+    @Then("I click on Update user button")
     public void iClickOnUpdateSerButton() {
-        impl.getPage().upUserBtn.click();
+         impl.getPage().upUserBtn.click();
     }
 
     @Then("I should see the new update information")
-    public void iShouldSeeTheNewUpdateInformation() {
+    public void iShouldSeeTheNewUpdateInformation() throws InterruptedException {
         Assert.assertEquals("success", impl.verifyUserInformationIsUpdated());
+
+
     }
 
     //-----------------------------  Reset user password  -----------------------------
@@ -100,8 +108,10 @@ public class EditUserSteps {
 
     @Then("Password should be {string}")
     public void passwordShouldBe(String value) {
+
         wait.until(ExpectedConditions.textToBePresentInElement(impl.getPage().uPWord, value));
         Assert.assertEquals(value, impl.getPage().uPWord.getText());
+
     }
 
 
@@ -124,8 +134,11 @@ public class EditUserSteps {
     }
 
     @Then("I should not see the newest user information I just added")
+
     public void iShouldNotSeeTheNewestUserInformationIJustAdded() {
+        wait.until(ExpectedConditions.visibilityOf(impl.getPage().actionBtn));
         Assert.assertEquals("success", impl.verifyDeleteUserInformation());
         WebDriverUtils.quitDriver();
     }
+
 }

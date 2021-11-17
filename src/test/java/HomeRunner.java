@@ -6,10 +6,9 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {"pretty", "html:target/homeRunner.html",
                 "rerun:target/failed-scenarios/homeRunner.txt"},
-        features = "src/main/resources/features/home.feature",
-        glue = {"steps"},
-        stepNotifications = true,
-        dryRun = false
+        features = "src/main/resources/features/home.feature"
+
+
 )
 public class HomeRunner {
 }

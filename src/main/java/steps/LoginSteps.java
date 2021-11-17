@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import utils.CucumberLogUtils_ScreenShot;
 import utils.WebDriverUtils;
 
 public class LoginSteps {
@@ -27,9 +28,10 @@ public class LoginSteps {
 
     @Then("Title of the page should be Home Page")
     public void titleOfThePageShouldBeHomePage() {
-        Assert.assertEquals("Home Page" , WebDriverUtils.getDriver().getTitle());
+        Assert.assertEquals("Student Portal" , WebDriverUtils.getDriver().getTitle());
         WebDriverUtils.quitDriver();
     }
+
 
     @Then("I should see error message")
     public void iShouldSeeErrorMessage() {
@@ -37,5 +39,12 @@ public class LoginSteps {
         WebDriverUtils.quitDriver();
     }
 
+
+    @Then("Title of the page should be Student Portal")
+    public void titleOfThePageShouldBeStudentPortal() {
+        Assert.assertEquals("Student Portal" , WebDriverUtils.getDriver().getTitle());
+        System.out.println(WebDriverUtils.getDriver().getTitle());
+        WebDriverUtils.quitDriver();
+    }
 
 }

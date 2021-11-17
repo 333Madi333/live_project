@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utils.WebDriverUtils;
 
+import java.util.List;
+
 public class AnnouncementPage {
     public AnnouncementPage(){
         PageFactory.initElements(WebDriverUtils.getDriver(), this);
@@ -25,8 +27,29 @@ public class AnnouncementPage {
     @FindBy (xpath = "//tbody/tr/td/b[1]")
     public WebElement announcementList;
 
+    @FindBy(xpath = "(//div[@class='each_announcement mt-2'])[1]")
+    public WebElement descriptionList;
+
     @FindBy (xpath = "(//u[@id='delete_post'])[1]")
     public WebElement deleteBtn;
 
+// Jack Testing
+    @FindBy(xpath = "//td/b")
+    public List<WebElement> Title;
+
+    @FindBy(xpath = "//td/b")
+    public WebElement Title2;
+
+    @FindBy(xpath = "//div[@class='each_announcement mt-2']")
+    public List<WebElement> Message;
+
+    @FindBy(xpath = "//div[@class='each_announcement mt-2']")
+    public WebElement Message2;
+
+    @FindBy(xpath = "//td[@class='each_announcement mt-2']")
+    public List<WebElement> TimeStamp;
+
+    @FindBy(xpath = "//td[@class='each_announcement mt-2']")
+    public WebElement TimeStamp2;
 
 }

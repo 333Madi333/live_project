@@ -1,5 +1,6 @@
 Feature: Home page scenarios
 
+@end
   Scenario:  Verify home page will display Welcome username!
     Given  I navigate to LoginPage
     When  I input "Username" as "kuba@gmail.com"
@@ -8,6 +9,7 @@ Feature: Home page scenarios
     Then The display should say Welcome "Kuba" !
 
 
+@end
   Scenario:  Verify that the title of the page is Student Portal
     Given  I navigate to LoginPage
     When  I input "Username" as "kuba@gmail.com"

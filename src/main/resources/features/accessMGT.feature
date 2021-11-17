@@ -9,15 +9,15 @@ Feature: Access Management scenarios
 
 @end
   Scenario: Create a new user
-    When I input to "First Name" as "Test"
-    And I input to "Last Name" as "TestUser"
-    And I input to "E-mail" as "testuser@gmail.com"
+    When I input to "First Name" as "Jack"
+    And I input to "Last Name" as "GaRm"
+    And I input to "E-mail" as "Jack@GaRm.com"
     And I select "Instructor" as a Role
-    And I select "N/A" as a Batch
-    Then I click Add user button
+    And I select "4" as a Batch
+    And I click Add user button
+    Then default password should be "jack.garm$"
 
-  Scenario: Delete user
-    Then  I delete "testuser@gmail.com" user
+
 
 
 
