@@ -6,6 +6,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {"pretty", "html:target/accessGMTRunner.html", "rerun:target/failed-scenarios/accessGMTRunner.txt"},
         features = "src/main/resources/features/accessMGT.feature"
+
 )
 
 public class accessGMTRunner {

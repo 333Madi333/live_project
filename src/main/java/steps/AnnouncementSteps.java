@@ -68,7 +68,7 @@ public class AnnouncementSteps {
     @Then("Verify Announcement title should be Display")
     public void verify_announcement_title_should_be_display () throws InterruptedException {
         CucumberLogUtils_ScreenShot.logPass("title is display", true);
-        CucumberLogUtils_ScreenShot.logInfo("title is display", true);
+        //CucumberLogUtils_ScreenShot.logInfo("title is display", true);
         List<WebElement> announcementTitle = impl.getPage().Title;
         for (int i = 0; i < announcementTitle.size(); i++) {
             Assert.assertTrue(announcementTitle.get(i).isDisplayed());
