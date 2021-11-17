@@ -42,14 +42,32 @@ public class AccesMngPage {
     public WebElement del;
 
 
+    @FindBy (xpath = "//tr/td[1]")
+    public List<WebElement> nameList;
+
+    @FindBy (xpath = "//tr/td[2]")
+    public List<WebElement> lastNameList;
+
     @FindBy (xpath = "//tr/td[3]")
     public List<WebElement> usersList;
 
     @FindBy (xpath = "//tr/td[4]")
     public List<WebElement> passwordsList;
 
+    @FindBy (xpath = "//tr/td[5]")
+    public List<WebElement> roleList;
+
+    @FindBy (xpath = "//tr/td[6]")
+    public List<WebElement> batchList;
+
     @FindBy (xpath = "//tr/td[7]")
     public List<WebElement> dropDownList;
+
+    @FindBy (xpath = "//tr")
+    public List<WebElement> rows;
+
+    @FindBy (xpath = "//tbody")
+    public WebElement table;
 
 
 }

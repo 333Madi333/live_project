@@ -1,11 +1,13 @@
 Feature: Initial user login
+
   Scenario: Login to the application
     Given  I navigate to LoginPage
     When  I input "Username" as "Instructor@gmail.com"
     And  I input "Password" as "123456"
     And I click Login button
     Then I click Manage Access button
-@end
+
+ @end
   Scenario: Create a new user and store password
     When I input to "First Name" as "Test"
     And I input to "Last Name" as "TestUser"
@@ -29,7 +31,8 @@ Feature: Initial user login
   Scenario: Verify that value of password for testuser@gmail.com are all stars
     Given I click on "access" button
     Then Password for user "testuser@gmail.com" should be "********"
-@end
+
+  @end
   Scenario: Delete test user when test is finished
     Given I delete "testuser@gmail.com" user
 

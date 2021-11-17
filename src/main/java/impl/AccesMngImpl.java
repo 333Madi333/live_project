@@ -91,7 +91,7 @@ public class AccesMngImpl {
 
     public void deleteUser(String UserName) throws InterruptedException {
 
-        Thread.sleep(2000);
+        Thread.sleep(500);
 
         List <WebElement> names = getPage().usersList;
         List <WebElement> pass = getPage().passwordsList;
@@ -109,7 +109,7 @@ public class AccesMngImpl {
         }
         delete.get(rowNumber).click();
 
-        Thread.sleep(1000);
+        Thread.sleep(500);
 
         String currentWindowID = WebDriverUtils.getDriver().getWindowHandle();
         Set<String> windows = WebDriverUtils.getDriver().getWindowHandles();
