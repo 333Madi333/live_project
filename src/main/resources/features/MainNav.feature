@@ -5,6 +5,11 @@ Feature: Main Navigation Scenarios
     When  I input "Username" as "kuba@gmail.com"
     And  I input "Password" as "123456"
     And I click Login button
+
+@end
+  Scenario: Instructor should be able to see navigation buttons
+    Then I should be able to see navigation buttons
+
 @end
   Scenario: Instructor should be able to see Homeworks navigation button
     Then I should be able to see Homeworks button is displayed
