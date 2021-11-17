@@ -9,6 +9,8 @@ import org.junit.Assert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.LogUtil;
+import utils.CucumberLogUtils_ScreenShot;
+
 import utils.SeleniumUtils;
 import utils.WebDriverUtils;
 
@@ -86,15 +88,15 @@ public class EditUserSteps {
 
 
     @Then("I click on Update user button")
-    public void iClickOnUpdateUserButton() {
-        impl.getPage().upUserBtn.click();
+    public void iClickOnUpdateSerButton() {
+         impl.getPage().upUserBtn.click();
     }
 
     @Then("I should see the new update information")
-    public void iShouldSeeTheNewUpdateInformation() {
-        wait.until(ExpectedConditions.visibilityOf(impl.getPage().actionBtn));
-//        LogUtil.logInfo("Newly update user information", true);
+    public void iShouldSeeTheNewUpdateInformation() throws InterruptedException {
         Assert.assertEquals("success", impl.verifyUserInformationIsUpdated());
+
+
     }
 
     //-----------------------------  Reset user password  -----------------------------
@@ -106,9 +108,10 @@ public class EditUserSteps {
 
     @Then("Password should be {string}")
     public void passwordShouldBe(String value) {
+
         wait.until(ExpectedConditions.textToBePresentInElement(impl.getPage().uPWord, value));
-//        LogUtil.logInfo("password should be default", true);
         Assert.assertEquals(value, impl.getPage().uPWord.getText());
+
     }
 
 
@@ -131,9 +134,9 @@ public class EditUserSteps {
     }
 
     @Then("I should not see the newest user information I just added")
+
     public void iShouldNotSeeTheNewestUserInformationIJustAdded() {
         wait.until(ExpectedConditions.visibilityOf(impl.getPage().actionBtn));
-//        LogUtil.logInfo("there should no longer visible of newly add user", true);
         Assert.assertEquals("success", impl.verifyDeleteUserInformation());
         WebDriverUtils.quitDriver();
     }
