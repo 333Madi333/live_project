@@ -7,6 +7,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -19,6 +21,9 @@ import java.util.Map;
 public class EditUserSteps {
     EditUserImpl impl = new EditUserImpl();
     WebDriverWait wait = new WebDriverWait(WebDriverUtils.getDriver(), 10);
+    JavascriptExecutor js = (JavascriptExecutor) WebDriverUtils.getDriver();
+    String editedFirstname = "Kai";
+
 
     @Given("I create new user")
     public void iCreateNewUser(Map<String, String> map) {
@@ -94,8 +99,8 @@ public class EditUserSteps {
 
     @Then("I should see the new update information")
     public void iShouldSeeTheNewUpdateInformation() {
-        String editedFirstname = "Kai";
         wait.until(ExpectedConditions.textToBePresentInElement(impl.getPage().uFName, editedFirstname));
+        js.executeScript("arguments[0].setAttribute('style', 'background: grey; border: 2px solid red;');", impl.getPage().uAccountInfo);
         Assert.assertEquals("success", impl.verifyUserInformationIsUpdated());
         LogUtil.logInfo("Editing User Info", true);
 
@@ -111,6 +116,7 @@ public class EditUserSteps {
     @Then("Password should be {string}")
     public void passwordShouldBe(String value) {
         wait.until(ExpectedConditions.textToBePresentInElement(impl.getPage().uPWord, value));
+        js.executeScript("arguments[0].setAttribute('style', 'background: grey; border: 2px solid red;');", impl.getPage().uPWord);
         Assert.assertEquals(value, impl.getPage().uPWord.getText());
         LogUtil.logInfo("Password can be reset", true);
     }
@@ -136,7 +142,8 @@ public class EditUserSteps {
 
     @Then("I should not see the newest user information I just added")
     public void iShouldNotSeeTheNewestUserInformationIJustAdded() {
-        wait.until(ExpectedConditions.visibilityOf(impl.getPage().actionBtn));
+        wait.until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElement(impl.getPage().uFName, editedFirstname)));
+        js.executeScript("arguments[0].setAttribute('style', 'background: grey; border: 2px solid red;');", impl.getPage().uAccountInfo);
         Assert.assertEquals("success", impl.verifyDeleteUserInformation());
         LogUtil.logInfo("Newly added user can be deleted", true);
 
