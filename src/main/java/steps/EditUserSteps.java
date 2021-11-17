@@ -8,6 +8,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.CucumberLogUtils_ScreenShot;
 import utils.SeleniumUtils;
 import utils.WebDriverUtils;
 
@@ -83,12 +84,14 @@ public class EditUserSteps {
 
     @Then("I click on Update ser button")
     public void iClickOnUpdateSerButton() {
-        impl.getPage().upUserBtn.click();
+         impl.getPage().upUserBtn.click();
     }
 
     @Then("I should see the new update information")
-    public void iShouldSeeTheNewUpdateInformation() {
+    public void iShouldSeeTheNewUpdateInformation() throws InterruptedException {
         Assert.assertEquals("success", impl.verifyUserInformationIsUpdated());
+
+
     }
 
     //-----------------------------  Reset user password  -----------------------------
@@ -100,8 +103,9 @@ public class EditUserSteps {
 
     @Then("Password should be {string}")
     public void passwordShouldBe(String value) {
-        wait.until(ExpectedConditions.textToBePresentInElement(impl.getPage().uPWord, value));
+         wait.until(ExpectedConditions.textToBePresentInElement(impl.getPage().uPWord, value));
         Assert.assertEquals(value, impl.getPage().uPWord.getText());
+
     }
 
 
@@ -124,7 +128,7 @@ public class EditUserSteps {
     }
 
     @Then("I should not see the newest user information I just added")
-    public void iShouldNotSeeTheNewestUserInformationIJustAdded() {
+    public void iShouldNotSeeTheNewestUserInformationIJustAdded() throws InterruptedException {
         Assert.assertEquals("success", impl.verifyDeleteUserInformation());
         WebDriverUtils.quitDriver();
     }

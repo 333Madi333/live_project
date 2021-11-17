@@ -7,6 +7,8 @@ import org.junit.runner.RunWith;
         plugin = {"pretty", "html:target/homeRunner.html",
                 "rerun:target/failed-scenarios/homeRunner.txt"},
         features = "src/main/resources/features/home.feature"
+
+
 )
 public class HomeRunner {
 }

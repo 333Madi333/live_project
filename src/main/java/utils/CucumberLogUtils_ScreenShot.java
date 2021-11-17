@@ -42,6 +42,14 @@ public class CucumberLogUtils_ScreenShot {
         }
     }
 
+    public static void scenarioID(boolean takeScreenshot){
+        currentScenario.log(getLogTime());
+        if(takeScreenshot){
+            final byte[] screenshot = ((TakesScreenshot) WebDriverUtils.getDriver())
+                    .getScreenshotAs(OutputType.BYTES);
+            currentScenario.attach(screenshot, "image/png", "screenshot");
+        }
+    }
     public static String getLogTime(){
         String format = "yyy-MM-dd HH:mm:ss";
         DateFormat dateFormat = new SimpleDateFormat(format);
