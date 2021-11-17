@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utils.WebDriverUtils;
 
+import java.util.List;
+
 public class studentNavPage {
 
     public  studentNavPage () {
@@ -25,6 +27,10 @@ public class studentNavPage {
 
     @FindBy(linkText = "Meeting links")
     public WebElement MeetingsLink;
+
+    @FindBy(css = "h2[id='welcome_msg']")
+    public WebElement WelMsg;
+
 
 }
 
