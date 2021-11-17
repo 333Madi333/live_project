@@ -19,11 +19,7 @@ public class studentNavSteps {
        Assert.assertTrue(impl.getPage().HomeworkLink.isDisplayed());
    }
 
-//    @When("I click on {string} button")
-//    public void i_click_on_button(String button) {
-//
-//       impl.clickButton(button);
-//   }
+
 
     @Then("I should be able to see title of the page as {string}")
    public void i_should_be_able_to_see_title_of_the_page_as(String expectedTitle) {
